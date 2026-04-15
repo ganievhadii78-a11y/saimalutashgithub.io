@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Саймалуу таш</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#f5f7fb;
+  color:#1c2738;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+ 
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+}
+.logo span{color:#2f7ed8;}
+
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:#333;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url('https://avatars.mds.yandex.net/i?id=3d66cbb1204387799f1546d34f93fe0d_l-7046448-images-thumbs&n=13') center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:90px;
+}
+
+/* SECTION */
+.section{
+  max-width:1200px;
+  margin:120px auto;
+  padding:20px;
+}
+
+/* TIMELINE */
+.timeline{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.item{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin-bottom:60px;
+  align-items:center;
+}
+
+.item img{
+  width:100%;
+  border-radius:20px;
+}
+
+.year{
+  background:#2f7ed8;
+  color:rgb(7, 7, 7);
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:20px;
+  margin-bottom:10px;
+}
+
+.item:nth-child(even){
+  direction:rtl;
+}
+.item:nth-child(even) div{
+  direction:ltr;
+}
+
+/* BUTTON */
+.back{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#2f7ed8;
+  color:rgb(0, 0, 0);
+  border:none;
+  padding:15px;
+  border-radius:50%;
+  cursor:pointer;
+}
+.timeline-slider{
+  position:relative;
+  height:400px;
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  gap:40px;
+  align-items:center;
+  opacity:0;
+  transform:translateX(100px);
+  transition:0.6s;
+}
+
+.slide.active{
+  opacity:1;
+  transform:translateX(0);
+}
+
+.slide img{
+  width:50%;
+  border-radius:20px;
+}
+
+.info{
+  width:50%;
+}
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.9);
+  color: #2c6bed;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 1.5s;
+}
+
+.back-btn:hover {
+  background: #2c6bed;
+  color: white;
+  transform: translateX(-5px);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+   <a href="index.html" class="back-btn">← Башкы бет</a>
+  <nav>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Саймалуу таш</h1>
+    <p>Курулуш жана инжиниринг компаниясы</p>
+  </div>
+</div>
+<!-- TIMELINE SLIDER -->
+<div class="section">
+  <div class="timeline-slider">
+
+    <!-- SLIDE -->
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1627629942592-97dd2863b86a?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+      <div class="info">
+        <div class="year">2015</div>
+        <h3>Башталыш</h3>
+        <p>Компания алгачкы турак жай долбоорлорун ишке ашыра баштап, курулуш тармагында өзүнүн багытын так аныктап, ишенимдүү кадамдарды жасай баштады. Алгачкы этапта негизги көңүл сапатка, коопсуздукка жана заманбап талаптарга жооп берген үйлөрдү курууга бурулду. Долбоорлорду ишке ашырууда жаңы технологиялар колдонулуп, ар бир майда-баратына чейин көңүл бурулуп, кардарлар үчүн ыңгайлуу жана функционалдуу жашоо шарттарын түзүү максат кылынды.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://avatars.mds.yandex.net/i?id=41c979eaab3b001d6240f0da2c38f9dc936080fc-5427455-images-thumbs&n=13">
+      <div class="info">
+        <div class="year">2016</div>
+        <h3>Өсүү</h3>
+        <p>Көп кабаттуу үйлөрдүн курулушу активдүү жүрүп, компаниянын долбоорлору рынокто бара-бара таанымал боло баштады. Заманбап архитектуралык чечимдер, сапаттуу курулуш материалдары жана ыңгайлуу пландоо аркылуу бул үйлөр шаар тургундарынын көңүлүн буруп, суроо-талапты жаратты. Ар бир жаңы долбоор мурункусунан да жакшыртылып, кардарлардын муктаждыктарына ылайык иштелип чыкты..</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://avatars.mds.yandex.net/i?id=cec3afe08e4c9ca4a25e858fb76b31eeb362d3fc-4145875-images-thumbs&n=13">
+      <div class="info">
+        <div class="year">2017</div>
+        <h3>Жаңы долбоорлор</h3>
+        <p>Компаниянын ишмердүүлүгү кеңейип, турак жай долбоорлор менен катар коммерциялык объекттерди куруу да активдүү түрдө башталды. Бул багытта соода борборлору, кеңсе имараттары жана бизнес комплекстер сыяктуу ар түрдүү долбоорлор ишке ашырылып, компаниянын мүмкүнчүлүктөрү дагы да кеңейди..</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://sputnik.kg/img/104824/55/1048245514_4:0:3645:2048_1280x0_80_0_0_fb22d1e92f0ec1a055d9de022c07423e.jpg">
+      <div class="info">
+        <div class="year">2018</div>
+        <h3>Кеңейүү</h3>
+        <p>Компания өз ишмердүүлүгүн кеңейтип, жаңы шаарларда курулуш иштерин баштоо менен географиясын кыйла кеңейтти. Бул кадам компаниянын өнүгүүсүндөгү маанилүү этап болуп, жаңы рынокторго чыгууга жана кардарлардын санын көбөйтүүгө мүмкүнчүлүк түздү..</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://bulak.kg/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-22-at-11.42.24.webp">
+      <div class="info">
+        <div class="year">2019</div>
+        <h3>Инновация</h3>
+        <p>Компания курулуш тармагында заманбап технологияларды активдүү колдонуу менен өзүнүн иш сапатын жаңы деңгээлге көтөрдү. Курулуш процессине инновациялык ыкмалар киргизилип, долбоорлорду пландоодон баштап, пайдаланууга берүүгө чейинки бардык этаптар санариптик чечимдер аркылуу башкарылууга өттү. Бул өз кезегинде убакытты үнөмдөөгө, чыгымдарды азайтууга жана иштин тактыгын жогорулатууга шарт түздү.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://i.ytimg.com/vi/5E0snA1YaVg/maxresdefault.jpg">
+      <div class="info">
+        <div class="year">2020</div>
+        <h3>Туруктуулук</h3>
+        <p>Компания кыйын шарттарга карабастан, бардык долбоорлорун үзгүлтүксүз улантып, туруктуулугун жана ишенимдүүлүгүн далилдей алды. Экономикалык өзгөрүүлөр, аба ырайынын татаал шарттары же башка тышкы факторлор пайда болгондо да, курулуш процесси токтоп калбай, алдын ала түзүлгөн пландар жана эффективдүү башкаруу аркылуу иш улантылды.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/30-10-2025_Bishkek.jpg/image1170x530cropped.jpg">
+      <div class="info">
+        <div class="year">2021</div>
+        <h3>Өнүгүү</h3>
+        <p>Компания инженердик чечимдерди тынымсыз өркүндөтүү аркылуу курулуш сапатын жана ишенимдүүлүгүн жаңы деңгээлге чыгарды. Долбоорлорду иштеп чыгууда заманбап эсептөө ыкмалары, так пландоо жана инновациялык инженердик технологиялар колдонулуп, ар бир имараттын бекемдиги жана узак мөөнөттүү пайдаланылышы камсыздалды.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://avatars.mds.yandex.net/i?id=17e9d0a7a0a21a2046a5369229055bfd797ac260-5241728-images-thumbs&n=13">
+      <div class="info">
+        <div class="year">2022</div>
+        <h3>Ири долбоорлор</h3>
+        <p>Компаниянын өнүгүүсү менен курулуш долбоорлорунун масштабы дагы кеңейип, ири комплекстерди ишке ашыруу башталды. Бул этапта бир нече турак жай блокторун, коммерциялык жайларды жана толук инфраструктураны камтыган заманбап комплекстер курулуп, шаар чөйрөсүнүн жаңы деңгээлде өнүгүшүнө өбөлгө түздү.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://avatars.mds.yandex.net/get-altay/2039785/2a0000016f31146011ad07a2f6f7dedf8832/XXL_height">
+      <div class="info">
+        <div class="year">2023</div>
+        <h3>Экспансия</h3>
+        <p>Компания өзүнүн ишмердүүлүгүн кеңейтүү максатында жаңы рынокторго чыгуу багытында активдүү кадамдарды жасай баштады. Бул стратегия компанияга жаңы мүмкүнчүлүктөрдү ачып, кардарлардын географиясын кеңейтүүгө жана атаандаштык жөндөмдүүлүгүн жогорулатууга шарт түздү..</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://sputnik.kg/img/07e9/05/0d/1093933574_0:56:3440:1992_1280x0_80_0_0_1d4857c3bad1357b82a9012cbc172afb.jpg">
+      <div class="info">
+        <div class="year">2024</div>
+        <h3>Сапат</h3>
+        <p>Компания өз ишмердүүлүгүндө эл аралык стандарттарды киргизүү аркылуу сапат жана ишенимдүүлүк боюнча жаңы деңгээлге көтөрүлдү. Курулуш процесстеринде дүйнөлүк талаптарга жооп берген нормалар жана эрежелер колдонулуп, ар бир долбоордун сапаты кылдат көзөмөлдөнө баштады.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://sputnik.kg/img/07e4/0c/08/1050712490_1:0:1999:1124_2072x0_60_0_0_2ab6bc21383c58578004a74973752ea9.jpg">
+      <div class="info">
+        <div class="year">2025</div>
+        <h3>Келечек</h3>
+        <p>Компания жаңы технологиялык үйлөрдү куруу аркылуу курулуш тармагында инновацияга багыт алганын көрсөттү. Бул үйлөр заманбап талаптарга жооп берип, “акылдуу үй” системалары менен жабдылып, жашоочуларга максималдуу ыңгайлуулукту жана коопсуздукту камсыз кылат. Автоматташтырылган жарык берүү, жылытуу, коопсуздук жана башкаруу системалары күнүмдүк жашоону жеңилдетип, энергияны үнөмдөөгө жардам берет..</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://avatars.mds.yandex.net/i?id=e1ad2755424bfe88e11086223bf3fbd6_l-5905145-images-thumbs&n=13">
+      <div class="info">
+        <div class="year">2026</div>
+        <h3>Лидерлик</h3>
+        <p>“Саймалуу таш” компаниясы курулуш тармагында туруктуу өсүү жана сапаттуу долбоорлорду ишке ашыруу аркылуу рынокто лидерлик позицияга жетишти. Компаниянын көп жылдык тажрыйбасы, ишенимдүү өнөктөштөрү жана кардарларга багытталган мамилеси анын ийгилигинин негизги факторлору болуп калды..</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function home(){
+  window.location.href="index.html";
+}
+</script>
+
+</body>
+<script>
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(i){
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+function autoSlide(){
+  index++;
+  if(index >= slides.length) index = 0;
+  showSlide(index);
+}
+
+showSlide(index);
+setInterval(autoSlide, 3000);
+</script>
+</html>

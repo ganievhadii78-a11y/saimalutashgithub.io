@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury House Sale</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0b1020;
+color:#fff;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:15px 25px;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:space-between;
+z-index:10;
+}
+.logo{color:#38bdf8;font-weight:bold;font-size:20px;}
+header button{
+background:#22c55e;
+border:none;
+padding:8px 15px;
+border-radius:10px;
+color:#fff;
+cursor:pointer;
+}
+
+/* MAIN CARD */
+.container{
+margin-top:80px;
+display:flex;
+justify-content:center;
+}
+
+.card{
+width:95%;
+max-width:900px;
+background:#111827;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 30px 70px rgba(0,0,0,0.7);
+position:relative;
+}
+
+/* IMAGE */
+.card img{
+width:100%;
+height:450px;
+object-fit:cover;
+transition:1s;
+}
+
+/* TAG */
+.tag{
+position:absolute;
+top:15px;
+right:15px;
+background:#38bdf8;
+padding:6px 12px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* PRICE */
+.price{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(0,0,0,0.7);
+padding:8px 12px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* INFO */
+.info{
+padding:25px;
+}
+.info h1{
+margin:0;
+color:#38bdf8;
+}
+.info p{
+color:#cbd5e1;
+line-height:1.5;
+}
+
+/* BUTTONS */
+.actions{
+display:flex;
+gap:10px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+.actions button{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.buy{background:#22c55e;color:#fff;}
+.call{background:#38bdf8;color:#fff;}
+.fav{background:#ef4444;color:#fff;}
+
+/* FEATURES */
+.features{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+flex-wrap:wrap;
+}
+.features div{
+background:#1f2937;
+padding:10px;
+border-radius:10px;
+margin:5px;
+flex:1;
+text-align:center;
+}
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.9);
+  color: #2c6bed;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #2c6bed;
+  color: white;
+  transform: translateX(-5px);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="back-btn">← Башкы бет</a>
+<button onclick="contact()"> Байланышуу</button>
+</header>
+
+<div class="container">
+<div class="card">
+
+<div class="tag" id="tag"></div>
+<div class="price" id="price"></div>
+
+<img id="img">
+
+<div class="info">
+<h1 id="title"></h1>
+<p id="desc"></p>
+
+<div class="features">
+<div id="rooms"></div>
+<div id="area"></div>
+<div>Бассейн</div>
+<div> Гараж</div>
+</div>
+
+<div class="actions">
+<button class="buy" onclick="buy()">Сатып алуу</button>
+<button class="call" onclick="contact()">WhatsApp</button>
+<button class="fav" onclick="fav()">❤️</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+
+/* DATA */
+let houses=[
+{
+name:"Modern Villa",
+price:120000,
+area:"250м²",
+rooms:5,
+desc:"Заманбап люкс вилла. Чоң терезелер, таза аба, акылдуу система, бассейн жана гараж бар.",
+images:[
+"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+"https://images.unsplash.com/photo-1600566753051-f0a9f8c0a5c2",
+"https://images.unsplash.com/photo-1600566752734-2c5c3a7d5a9c"
+],
+types:["ЗАЛ","КУХНЯ","СПАЛЬНЯ","ВАННА"]
+},
+
+{
+name:"Luxury Apartment",
+price:95000,
+area:"180м²",
+rooms:4,
+desc:"Шаардын борборунда жайгашкан люкс квартира. Дизайн супер, жашоого даяр.",
+images:[
+"https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+"https://images.unsplash.com/photo-1560184897-502a475f7a0d",
+"https://images.unsplash.com/photo-1588854337221-4cf9fa96059c",
+"https://images.unsplash.com/photo-1560449752-3fd0b6e2c1a0"
+],
+types:["ЗАЛ","КУХНЯ","СПАЛЬНЯ","ВАННА"]
+}
+];
+
+let i=0;
+let r=0;
+
+/* ELEMENTS */
+let img=document.getElementById("img");
+let title=document.getElementById("title");
+let desc=document.getElementById("desc");
+let tag=document.getElementById("tag");
+let price=document.getElementById("price");
+let rooms=document.getElementById("rooms");
+let area=document.getElementById("area");
+
+/* UPDATE */
+function update(){
+let h=houses[i];
+
+img.src=h.images[r % h.images.length];
+title.innerText=h.name;
+desc.innerText=h.desc;
+tag.innerText=h.types[r % 4];
+price.innerText=" $" + h.price;
+rooms.innerText=" " + h.rooms + " бөлмө";
+area.innerText="" + h.area;
+}
+
+/* AUTO ROOM */
+setInterval(()=>{
+r++;
+update();
+},2000);
+
+/* AUTO HOUSE */
+setInterval(()=>{
+i=(i+1)%houses.length;
+r=0;
+update();
+},5000);
+
+update();
+
+/* ACTIONS */
+function buy(){
+alert("Сатып алуу үчүн WhatsAppка жазыңыз!");
+contact();
+}
+
+function contact(){
+window.open("https://wa.me/996700000000?text=Мен үй алгым келет","_blank");
+}
+
+function fav(){
+alert("❤️ Сакталды!");
+}
+
+</script>
+
+</body>
+</html>

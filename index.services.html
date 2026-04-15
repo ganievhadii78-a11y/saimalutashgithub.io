@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Саймалуу Таш</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+background:url('https://i.pinimg.com/736x/15/1c/e2/151ce260e44a7a11e2bef5836ffbc4ec.jpg') no-repeat center/cover;
+color:#111;
+}
+
+/* overlay */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(255,255,255,0.85);
+z-index:-1;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.badge{
+display:inline-block;
+background:#eaf1ff;
+color:#1e63d5;
+padding:8px 16px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+}
+
+.hero span{
+color:#1e63d5;
+}
+
+.hero p{
+margin-top:20px;
+color:#6b7280;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:25px;
+margin:10px;
+display:inline-block;
+text-decoration:none;
+}
+
+.primary{background:#1e63d5;color:#fff}
+.secondary{background:#fff;border:1px solid #ddd}
+
+/* SERVICES */
+.services{
+max-width:1200px;
+margin:60px auto;
+text-align:center;
+}
+
+.services h2{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.services p{
+color:#6b7280;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:0 20px;
+}
+
+/* CARD */
+.card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+text-align:left;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+color:#6b7280;
+font-size:14px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+margin:100px auto;
+max-width:900px;
+}
+
+.cta h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.cta p{
+color:#6b7280;
+margin-bottom:20px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:32px}
+}
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.9);
+  color: #2c6bed;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #2c6bed;
+  color: white;
+  transform: translateX(-5px);
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="badge">КУРУЛУШ КОМПАНИЯСЫ</div>
+
+<h1>Толук спектр <br><span>курулуш кызматтары</span></h1>
+
+<p>Долбоорлоодон баштап курулушту толук бүтүрүүгө чейинки кесиптик башкаруу</p>
+
+<a class="btn primary">Биздин кызматтар</a>
+ <a href="projects.html" class="back-btn">← Долбоорлор</a>
+</section>
+
+
+<section class="services">
+<h2>Биздин кызматтар</h2>
+<p>Толук курулуш процесси — долбоордон тартып курулушту өткөрүп берүүгө чейин</p>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+<div class="card-content">
+<h3>Жер иштери</h3>
+<p>Аймакты курулушка даярдоо</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
+<div class="card-content">
+<h3>Бетон иштер</h3>
+<p>Монолиттик курулуш жана пайдубал иштер</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+<div class="card-content">
+<h3>Дизайн</h3>
+<p>Архитектуралык долбоорлоо</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
+<div class="card-content">
+<h3>Инжиниринг</h3>
+<p>Инженердик системаларды интеграциялоо</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<div class="card-content">
+<h3>Фасад</h3>
+<p>Заманбап фасад чечимдер</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<div class="card-content">
+<h3>Башкаруу</h3>
+<p>Курулуш процессин көзөмөлдөө</p>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section class="cta">
+<h2>Идеядан реалдуу долбоорго чейин</h2>
+<p>Биз сиздин идеяңызды толук ишке ашырып, сапаттуу курулуш объектисине айлантабыз</p>
+
+<a href="contacts.html" class="back-btn">Байланышуу</a>
+<a class="btn secondary">Биздин проекттер</a>
+</section>
+
+</body>
+</html>

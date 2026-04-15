@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Проекты</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  color:#fff;
+}
+
+/* VIDEO BACKGROUND */
+video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.3s;
+}
+
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.title{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  padding:10px;
+  text-align:center;
+}
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.9);
+  color: #2c6bed;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #2c6bed;
+  color: white;
+  transform: translateX(-5px);
+}
+</style>
+</head>
+
+<body>
+  <a href="index.html" class="back-btn">← Башкы бет</a>
+   <a href="services.html" class="back-btn">← артка </a>
+
+<!-- VIDEO -->
+<video autoplay muted loop>
+  <source src="video.mp4/qUinGQEAAAA.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<h1 style="text-align:center;">САЙМАЛУУ ТАШ</h1>
+
+<div class="grid">
+
+<div class="card"><img src="img21.png/1093933574_0_56_3440_1992_1280x0_80_0_0_1d4857c3bad1357b82a9012cbc172afb.jpg"><div class="title">Долбоор 1</div></div>
+<div class="card"><img src="img22.png/6894545b84ef4.2e16d0ba.fill-1200x630.jpg"><div class="title">Долбоор 2</div></div>
+<div class="card"><img src="img23.png/1084208314_868_0_2916_2048_1920x0_80_0_0_c3b22b463ee97151e0cb86b4fc630bcd.jpg"><div class="title">Долбоор 3</div></div>
+<div class="card"><img src="img24,png/377263.jpg"><div class="title">Долбоор 4</div></div>
+<div class="card"><img src="img25.png/maxresdefault.jpg"><div class="title">Долбоор 5</div></div>
+<div class="card"><img src="img26.png/1079534214_0_0_1920_1080_2072x0_60_0_0_2d852dc6dd8d2449271ff4b097d18957.jpg"><div class="title">Долбоор 6</div></div>
+<div class="card"><img src="img27.png/497748743_1229912025810096_5651482346389815934_n-1-1.jpg "><div class="title">Долбоор 7</div></div>
+<div class="card"><img src="img28.png/7446_5459_1.2e16d0ba.fill-1200x630.png"><div class="title">Долбоор 8</div></div>
+<div class="card"><img src="img29.png/i.webp"><div class="title">Долбоор 9</div></div>
+<div class="card"><img src="img30.png/i (1).webp"><div class="title">Долбоор 10</div></div>
+<div class="card"><img src="img31.png/5440508243362313798_sK51mKW.2e16d0ba.fill-1200x630.jpg"><div class="title">Долбоор 11</div></div>
+<div class="card"><img src="img32.png/1097272577_0_101_1080_709_2072x0_60_0_0_07d644ea288c0bf9a092fce6ed04085d.jpg"><div class="title">Долбоор 12</div></div>
+<div class="card"><img src="img33.png/337963.jpg"><div class="title">Долбоор13</div></div>
+<div class="card"><img src="img34.png/zaglavnoe-foto-sb-4-4.png"><div class="title">Долбоор 14</div></div>
+<div class="card"><img src="img35.png/i.webp"><div class="title">Долбоор 15</div></div>
+<div class="card"><img src="img36.png/i.webp"><div class="title">Долбоор 16</div></div>
+
+</div>
+
+</body>
+</html>
